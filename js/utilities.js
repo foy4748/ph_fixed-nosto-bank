@@ -2,8 +2,12 @@ function getInputFieldValueById(inputFieldId) {
   const inputField = document.getElementById(inputFieldId);
   const inputFieldValueString = inputField.value;
   const inputFieldValue = parseFloat(inputFieldValueString);
+  inputField.value = ""; //Fixed
   return inputFieldValue;
+  //Error 13: Clearing Input field after returing
+  /* Wrong 
   inputField.value = "";
+  */
 }
 
 function getTextElementValueById(elementId) {

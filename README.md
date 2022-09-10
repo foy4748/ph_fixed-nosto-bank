@@ -130,6 +130,17 @@
 ### Error 12  
   
   Problem: Negetive Balanace issue.   
-  
+
   Fix:  
+  js/withdraw.js
   `if(newBalanceTotal < 0) { alert("Insufficient Balance"); return; }`  
+
+### Error 13
+
+  Problem: Clearing Input field after returing  
+  js/utilities.js  
+  `return inputFieldValue; inputField.value = "";`  
+
+  Fix:   
+  js/utilities.js  
+  `inputField.value = ""; return inputFieldValue;`  
