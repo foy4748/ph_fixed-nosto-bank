@@ -32,7 +32,7 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
   /* Wrong
   setTextElementValueById(withdraw - total, newWithdrawTotal);
   */
-  setTextElementValueById("withdraw-total", newWithdrawTotal); //Fixed
+  //Moved after verifying Insufficient Balanace [1]
   const previousBalanceTotal = getTextElementValueById("balance-total");
   //Error 11: Unexpected Result in UI
   //Error 11: due to number and string concatenation
@@ -44,5 +44,13 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
   const newBalanceTotal =
     parseFloat(previousBalanceTotal) - parseFloat(newWithdrawAmount); //Fixed
 
+  //Error 12: Negetive Balanace
+  if (newBalanceTotal < 0) {
+    alert("Insufficient Balance");
+    return;
+  }
+
+  //Moved this link here  [1]
+  setTextElementValueById("withdraw-total", newWithdrawTotal); //Fixed Error 9
   setTextElementValueById("balance-total", newBalanceTotal);
 });
