@@ -28,11 +28,14 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
   */
   const newWithdrawTotal =
     parseFloat(previousWithdrawTotal) + parseFloat(newWithdrawAmount);
+
   //Error 9: Instead of passing an ID, undefined variables were passed
   /* Wrong
   setTextElementValueById(withdraw - total, newWithdrawTotal);
   */
-  //Moved after verifying Insufficient Balanace [1]
+
+  //Moved this line after verifying Insufficient Balanace [1]
+
   const previousBalanceTotal = getTextElementValueById("balance-total");
   //Error 11: Unexpected Result in UI
   //Error 11: due to number and string concatenation
@@ -50,7 +53,7 @@ document.getElementById("btn-withdraw").addEventListener("click", function () {
     return;
   }
 
-  //Moved this link here  [1]
+  //Moved this line here  [1]
   setTextElementValueById("withdraw-total", newWithdrawTotal); //Fixed Error 9
   setTextElementValueById("balance-total", newBalanceTotal);
 });
